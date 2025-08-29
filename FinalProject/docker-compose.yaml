@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  lms-employee:
+    build:
+      context: ./leave-backend/employee_service
+      dockerfile: Dockerfile
+    container_name: lms-employee
+    restart: unless-stopped
+    ports:
+      - "8001:8001"  
+    volumes:
+      - lms_employee_data:/app/instance
+    
+
+  lms-manager:
+    build:
+      context: ./leave-backend/manager_service
+      dockerfile: Dockerfile
+    container_name: lms-manager
+    restart: unless-stopped
+    ports:
+      - "8002:8002"   
+    volumes:
+      - lms_manager_data:/app/instance
+    depends_on:
+      - lms-employee
+   
+
+  lms-gateway:
+    build:
+      context: ./leave-backend/gateway
+      dockerfile: Dockerfile
+    container_name: lms-gateway
+    restart: unless-stopped
+    environment:
+      EMPLOYEE_URL: http://lms-employee:8001
+      MANAGER_URL:  http://lms-manager:8002
+    ports:
+      - "3000:3000"
+    depends_on:
+      - lms-employee
+      - lms-manager
+
+  lms-frontend:
+    build:
+      context: ./leave-frontend
+      dockerfile: Dockerfile
+    container_name: lms-frontend
+    restart: unless-stopped
+    ports:
+      - "8090:80"   
+    depends_on:
+      - lms-gateway
+
+volumes:
+  lms_employee_data:
+  lms_manager_data:

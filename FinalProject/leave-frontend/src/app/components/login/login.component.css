@@ -1,0 +1,88 @@
+/* Background related to leave/office theme */
+.login-wrapper {
+  background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Card */
+.login-card {
+  max-width: 380px;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.92); /* translucent */
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(6px); /* glass effect */
+}
+
+/* Profile Icon */
+.icon-wrapper {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.login-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Inputs */
+input.form-control {
+  border-radius: 0.5rem;
+}
+
+/* Button hover */
+.btn.hover-scale:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+/* Toggle password */
+.toggle-btn {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Spinner */
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Toast message */
+.toast-message {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 1.5rem 1rem;
+  }
+  .login-icon {
+    width: 50px;
+    height: 50px;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+}

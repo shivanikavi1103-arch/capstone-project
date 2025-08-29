@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+COPY app.py ./
+
+
+ENV EMPLOYEE_URL=http://lms-employee_service:8001
+ENV MANAGER_URL=http://lms-manager_service:8002
+
+EXPOSE 3000
+CMD ["python", "app.py"]

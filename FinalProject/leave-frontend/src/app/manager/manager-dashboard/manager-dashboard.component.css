@@ -1,0 +1,182 @@
+/* Global Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-wrapper {
+  flex: 1;
+}
+
+
+.navbar {
+  background: linear-gradient(90deg, rgba(0, 98, 230, 0.85), rgba(0, 160, 255, 0.85));
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  color: #fff;
+}
+
+.navbar .nav-link,
+.navbar .btn.nav-link {
+  color: #f1f1f1 !important;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .btn.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  color: #fff !important;
+}
+
+.navbar-text strong {
+  color: #ffe082;
+}
+
+
+.welcome-box {
+  background: linear-gradient(135deg, #f0f7ff, #d0e8ff);
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-box h2 {
+  font-weight: 800;
+  color: #007acc;
+}
+
+.welcome-box p {
+  font-size: 1rem;
+  color: #444;
+}
+
+
+.quick-card {
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 122, 204, 0.25);
+}
+
+
+.text-gradient {
+  background: linear-gradient(45deg, #007acc, #00b0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+
+.status-approved, .status-rejected, .badge.bg-warning {
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.status-approved {
+  background: #00b894;
+  color: white;
+  box-shadow: 0 0 6px #00b894aa;
+}
+
+.status-rejected {
+  background: #d63031;
+  color: white;
+  box-shadow: 0 0 6px #d63031aa;
+}
+
+
+.btn-gradient {
+  background: linear-gradient(45deg, #007acc, #00b0ff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 12px 26px;
+  box-shadow: 0 6px 15px rgba(0, 176, 255, 0.4);
+  transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  box-shadow: 0 8px 20px rgba(0, 176, 255, 0.6);
+}
+
+
+.table-responsive {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  background: #dbeafe;
+  font-weight: 700;
+  color: #1a202c;
+  border: none;
+}
+
+.table td {
+  background: white;
+  border: none;
+  border-radius: 12px;
+}
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.footer {
+  background: linear-gradient(45deg, #4a90e2, #007acc);
+  color: white;
+  padding: 15px 0;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 -4px 15px rgba(0, 122, 204, 0.3);
+  margin-top: auto;  
+  width: 100%;
+}
+
+
+.approvals-preview {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.approvals-preview .card-header {
+  background: linear-gradient(90deg, #007acc, #00b0ff);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+}
+
+.table-gradient th {
+  background: #e3f2fd;
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+.approvals-preview table tbody tr:hover {
+  background: #f1faff;
+  transition: 0.2s ease-in;
+}
